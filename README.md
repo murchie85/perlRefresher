@@ -20,8 +20,10 @@ Sure, I'll update the Table of Contents to accurately reflect the sections in yo
   - [5.2. Intermediate Regex](#2-intermediate-regex)
   - [5.3. Advanced Regex](#3-advanced-regex)
   - [5.4. Email Validation](#4-email-validation)
+  - [5.5. Capturing Groups](#5-Capturing-Groups)
 - [6. Best Practices and Tips](#best-practices-and-tips)
 - [7. Resources](#resources)
+
 
 
 ## Introduction to Perl
@@ -54,6 +56,16 @@ my $variable = "value";
 
 ### Data Structures
 Perl supports several data structures like scalars (`$`), arrays (`@`), and hashes (`%`).
+
+
+
+
+
+
+
+
+
+
 
 ## Regular Expressions (Regex)
 
@@ -94,17 +106,6 @@ if ($numberOne !~ /^\d+$/) {
     print "Please enter a valid number.\n";
 }
 ```
-
-
-Certainly! Here's how you could format the explanation of Perl regular expressions, including examples and progressing up to email validation, in a README format:
-
----
-
-# Perl Regular Expressions (Regex) Guide
-
-This guide provides an overview of using regular expressions in Perl, starting from basic concepts and examples, and progressing towards more advanced usage including email validation.
-
-
 
 ## 1. Basic Regex
 
@@ -165,12 +166,28 @@ Email validation using regex can be complex. Below is a simplified example:
 
 *Note: This is a simplified version of an email validation regex and might not cover all valid email formats.*
 
----
+## 5. Capturing Groups
 
-Feel free to modify or expand this template according to your specific documentation needs!
+Capturing groups in regex are used to extract and manipulate sub-parts of a string that match a specific pattern. They are defined using parentheses `()`.
+
+#### Example: Extracting Date Components
+```perl
+my $date = "2023-11-24";
+if ($date =~ /(\d{4})-(\d{2})-(\d{2})/) {
+    print "Year: $1\n";
+    print "Month: $2\n";
+    print "Day: $3\n";
+}
+```
+- This pattern captures the year, month, and day from a date string.
+- `$1`, `$2`, and `$3` refer to the first, second, and third capturing groups, respectively.
 
 
-## Best Practices and Tips
+
+
+
+
+# Best Practices and Tips
 
 ### Error Handling
 Always check the return values of functions and handle exceptions appropriately.
